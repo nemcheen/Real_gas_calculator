@@ -1,8 +1,6 @@
-from gas_params import *
+from gas_params import gases, R
 import numpy as np
 from numpy.polynomial.polynomial import polyroots
-R = 8.314462618
-import string
 
 
 def check_input_p():
