@@ -28,7 +28,7 @@ def make_plot(P_min=0.2e6,
     surf = ax.plot_surface(P_grid, T_grid, Z, cmap='viridis', alpha=0.8)
     fig.colorbar(surf, ax=ax, shrink=0.5, aspect=20)
         
-    ax.set_xlabel('Давление $P$, Па', fontsize=12, labelpad=10)
+    ax.set_xlabel('Давление $P$, МПа', fontsize=12, labelpad=10)
     ax.set_ylabel('Температура $T$, K', fontsize=12, labelpad=10)
     ax.set_zlabel('Коэф-т сжимаемости $Z(P,T)$', fontsize=12, labelpad=10)
     
@@ -41,5 +41,3 @@ def make_plot(P_min=0.2e6,
     
     plt.tight_layout()
     plt.show()
-
-make_plot()

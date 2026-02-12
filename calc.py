@@ -2,6 +2,16 @@ from gas_params import gases, R
 import numpy as np
 from numpy.polynomial.polynomial import polyroots
 
+def kelvin_to_celsius(temperature_kelvin):
+    """ Конвертирует температуру из Кельвинов в градусы Цельсия. """
+    return temperature_kelvin - 273.15
+
+
+def pa_to_atm(pressure_pa):
+    """ Конвертирует давление из паскалей (Па) в атмосферы (атм). """
+    conversion_factor = 9.86923266716013 * 1e-6
+    return pressure_pa * conversion_factor
+
 
 def get_A(P, T, T_c, P_c, omega):
     a = get_a(T_c, P_c, T, omega)
@@ -48,3 +58,11 @@ def get_Z(P, T, gas='metan'):
     real_roots = roots[np.isreal(roots)].real
     positive_real = real_roots[real_roots > 0]
     return np.max(positive_real) if len(positive_real) > 0 else np.nan
+
+
+def get_V(T, P, Z=1):
+    V = R * T / P
+    if Z != 1:
+        V = Z * V
+    return V
+
