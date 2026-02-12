@@ -36,14 +36,6 @@ def get_b(T_c, P_c):
     b = 0.07780 * R * T_c / P_c
     return b
 
-def get_Z_(A, B):
-    f = -(A * B - B**2 - B**3)
-    e = A - 2 * B - 3 * B**2 
-    d = -(1 - B)
-    roots = polyroots([f, e, d, 1])
-    real_roots = roots[np.isreal(roots)].real
-    positive_real = real_roots[real_roots > 0]
-    return np.max(positive_real) if len(positive_real) > 0 else np.nan
 
 def get_Z(P, T, gas='metan'):
     T_c, P_c, omega = gases[gas]
