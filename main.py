@@ -15,7 +15,6 @@ def main():
     A = get_A(P, T, T_c, P_c, omega)
     B = get_B(P, T, T_c, P_c)
     Z = get_Z(P, T, gas=gas)
-    print(Z)
     V_ideal = get_V(T, P)
     V_real = get_V(T, P, Z=Z)
     make_report(T, P, T_c, gas, P_c, omega, a_c, k, alpha, a, b, A, B, Z, V_ideal, V_real)
